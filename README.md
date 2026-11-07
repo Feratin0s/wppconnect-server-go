@@ -1,3 +1,5 @@
+> **armv7 / TV box build:** see [README.armv7.md](README.armv7.md)
+
 **English** | [Português (Brasil)](./README.pt-BR.md)
 
 <p align="center">
