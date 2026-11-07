@@ -54,6 +54,7 @@ func main() {
 }
 
 func run(ctx context.Context, cfg config.Config) error {
+	updateWhatsAppVersion(ctx)
 	if err := os.MkdirAll(cfg.DataDir, 0700); err != nil {
 		return err
 	}

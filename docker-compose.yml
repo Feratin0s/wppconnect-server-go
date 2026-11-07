@@ -1,7 +1,11 @@
 services:
   wppconnect-go:
     container_name: wpp-server-go
-    image: wppconnect/wppconnect-server-go:${WPP_SERVER_GO_TAG:-latest}
+    image: wppconnect-server-go:armv7
+    platform: linux/arm/v7
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     stop_grace_period: 35s
     environment:
@@ -34,7 +38,7 @@ services:
       MEDIA_RETENTION_DAYS: "${MEDIA_RETENTION_DAYS:-7}"
       ENABLE_EXPERIMENTAL_INTERACTIVES: "${ENABLE_EXPERIMENTAL_INTERACTIVES:-false}"
     volumes:
-      - wpp_go_data:/data
+      - ./wpp_go_data:/data
     ports:
       - "21465:21465"
     healthcheck:

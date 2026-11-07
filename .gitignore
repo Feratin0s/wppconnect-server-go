@@ -7,3 +7,4 @@ userDataDir/
 .env
 graphify-out/
 .tmp/
+wpp_go_data/
